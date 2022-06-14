@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: goort
+Build-Jdk: 17.0.2
+Implementation-Title: pedidos
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.goortis.pedidos
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/Pedidos-API/
+Created-By: Maven Integration for Eclipse
+
