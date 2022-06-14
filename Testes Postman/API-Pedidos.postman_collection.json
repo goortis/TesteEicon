@@ -1,0 +1,523 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API-Pedidos",
+		"_postman_id": "07e16d18-01cc-9031-d576-371d17349691",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Teste criação clientes",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar cliente json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/clientes/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 13,\n    \"nome\":\"jose Gonzales\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar cliente xml",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/clientes/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<root>\r\n   <id>14</id>\r\n   <nome>jose Gonzales</nome>\r\n</root>"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2-Teste criação items",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar item json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/items/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"id\" : 11,\t\n\"nome\" : \"item 11\"  \n    \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar item xml",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/items/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<root>\r\n   <id>12</id>\r\n   <nome>item 11</nome>\r\n</root>"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3-Teste criação arquivo",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar arquivo json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/arquivos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\" : 2,\n\t\"nome\": \"Arquivo002\",\n\t\"pedidos\" :\n   [ {\n\t\"codPedido\" : 11,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":1},\n     \"itemsPedidos\" : [{\"item\": {\"id\":1},\"pedido\": {\"codPedido\":11}, \"valor\": 50, \"quantidade\":2},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 25, \"quantidade\":4}],\n     \"nome\":\"pedido 11\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 200\n     }]\n     \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar arquivo xml",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/arquivos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<root>\r\n   <id>3</id>\r\n   <nome>Arquivo003</nome>\r\n   <pedidos>\r\n      <element>\r\n         <arquivo>\r\n            <id>3</id>\r\n         </arquivo>\r\n         <cliente>\r\n            <id>2</id>\r\n         </cliente>\r\n         <codPedido>12</codPedido>\r\n         <dataCadastro>2017-01-06</dataCadastro>\r\n         <itemsPedidos>\r\n            <element>\r\n               <item>\r\n                  <id>2</id>\r\n               </item>\r\n               <pedido>\r\n                  <codPedido>12</codPedido>\r\n               </pedido>\r\n               <quantidade>2</quantidade>\r\n               <valor>20</valor>\r\n            </element>\r\n            <element>\r\n               <item>\r\n                  <id>5</id>\r\n               </item>\r\n               <pedido>\r\n                  <codPedido>12</codPedido>\r\n               </pedido>\r\n               <quantidade>4</quantidade>\r\n               <valor>25</valor>\r\n            </element>\r\n         </itemsPedidos>\r\n         <nome>pedido 12</nome>\r\n         <total>140</total>\r\n      </element>\r\n   </pedidos>\r\n</root>"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4-Teste criação pedidos",
+			"description": "",
+			"item": [
+				{
+					"name": "Criar sem quantidade json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 13,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":5},\n     \"itemsPedidos\" : [{\"item\": {\"id\":6},\"pedido\": {\"codPedido\":13}, \"valor\": 50, \"quantidade\":0},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 13\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 150\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar sem quantidade xml",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<root>\r\n   <arquivo>\r\n      <id>2</id>\r\n   </arquivo>\r\n   <cliente>\r\n      <id>5</id>\r\n   </cliente>\r\n   <codPedido>14</codPedido>\r\n   <dataCadastro>2017-01-05</dataCadastro>\r\n   <itemsPedidos>\r\n      <element>\r\n         <item>\r\n            <id>6</id>\r\n         </item>\r\n         <pedido>\r\n            <codPedido>14</codPedido>\r\n         </pedido>\r\n         <quantidade>0</quantidade>\r\n         <valor>50</valor>\r\n      </element>\r\n      <element>\r\n         <item>\r\n            <id>2</id>\r\n         </item>\r\n         <pedido>\r\n            <codPedido>14</codPedido>\r\n         </pedido>\r\n         <quantidade>0</quantidade>\r\n         <valor>100</valor>\r\n      </element>\r\n   </itemsPedidos>\r\n   <nome>pedido 14</nome>\r\n   <total>150</total>\r\n</root>"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar sem data de cadastro json",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 15,\n    \"dataCadastro\":null,\n     \"cliente\" : {\"id\":9},\n     \"itemsPedidos\" : [{\"item\": {\"id\":8},\"pedido\": {\"codPedido\":15}, \"valor\": 10, \"quantidade\":2},{\"item\": {\"id\":1},\"pedido\": {\"codPedido\":15}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 15\",\n     \"arquivo\" : {\"id\" : 3},\n     \"total\" : 200\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Criar sem data de cadastro xml",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<root>\r\n   <arquivo>\r\n      <id>3</id>\r\n   </arquivo>\r\n   <cliente>\r\n      <id>9</id>\r\n   </cliente>\r\n   <codPedido>16</codPedido>\r\n   <dataCadastro> null</dataCadastro>\r\n   <itemsPedidos>\r\n      <element>\r\n         <item>\r\n            <id>8</id>\r\n         </item>\r\n         <pedido>\r\n            <codPedido>16</codPedido>\r\n         </pedido>\r\n         <quantidade>2</quantidade>\r\n         <valor>10</valor>\r\n      </element>\r\n      <element>\r\n         <item>\r\n            <id>1</id>\r\n         </item>\r\n         <pedido>\r\n            <codPedido>16</codPedido>\r\n         </pedido>\r\n         <quantidade>0</quantidade>\r\n         <valor>100</valor>\r\n      </element>\r\n   </itemsPedidos>\r\n   <nome>pedido 16</nome>\r\n   <total>200</total>\r\n</root>"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5-Teste consultas",
+			"description": "",
+			"item": [
+				{
+					"name": "Buscar pedido por cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/cliente/2",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "accept",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 13,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":5},\n     \"itemsPedidos\" : [{\"item\": {\"id\":6},\"pedido\": {\"codPedido\":13}, \"valor\": 50, \"quantidade\":0},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 13\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 150\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos os pedidos do cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "accept",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 13,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":5},\n     \"itemsPedidos\" : [{\"item\": {\"id\":6},\"pedido\": {\"codPedido\":13}, \"valor\": 50, \"quantidade\":0},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 13\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 150\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos os pedidos por data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/data/12/05/2017",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "accept",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 13,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":5},\n     \"itemsPedidos\" : [{\"item\": {\"id\":6},\"pedido\": {\"codPedido\":13}, \"valor\": 50, \"quantidade\":0},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 13\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 150\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos os pedidos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"    ",
+									"",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "localhost:8080/pedidos/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "accept",
+								"value": "application/xml",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\n\t\"codPedido\" : 13,\n    \"dataCadastro\":\"2017-01-05\",\n     \"cliente\" : {\"id\":5},\n     \"itemsPedidos\" : [{\"item\": {\"id\":6},\"pedido\": {\"codPedido\":13}, \"valor\": 50, \"quantidade\":0},{\"item\": {\"id\":2},\"pedido\": {\"codPedido\":11}, \"valor\": 100, \"quantidade\":0}],\n     \"nome\":\"pedido 13\",\n     \"arquivo\" : {\"id\" : 2},\n     \"total\" : 150\n     }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
